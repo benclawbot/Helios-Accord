@@ -133,6 +133,29 @@ npm run dev
 
 Open the local URL printed by Vite, then select **Assume the Mandate**.
 
+## Windows Desktop App
+
+Helios Accord is also packaged as a lightweight native Windows application using **Tauri 2** and the system WebView2 runtime. This keeps the download substantially smaller than an Electron bundle while preserving the complete game.
+
+Download the latest Windows installer or portable executable from the [GitHub Releases page](https://github.com/benclawbot/Helios-Accord/releases/latest):
+
+- **Installer:** `Helios Accord_1.0.0_x64-setup.exe`
+- **Portable app:** `helios-accord.exe`
+
+To build the Windows application locally:
+
+```powershell
+npm install
+npm run desktop:build
+```
+
+The packaged artifacts are written to:
+
+```text
+src-tauri/target/release/helios-accord.exe
+src-tauri/target/release/bundle/nsis/Helios Accord_1.0.0_x64-setup.exe
+```
+
 ## Validation
 
 ```powershell

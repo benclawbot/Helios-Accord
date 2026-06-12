@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg"><stop stop-color="#153844"/><stop offset="1" stop-color="#03070A"/></radialGradient>
+    <radialGradient id="sun"><stop stop-color="#FFF2A8"/><stop offset="1" stop-color="#D07B37"/></radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="170" fill="none" stroke="#63D5E4" stroke-opacity=".25" stroke-width="3"/>
+  <circle cx="256" cy="256" r="118" fill="none" stroke="#63D5E4" stroke-opacity=".38" stroke-width="3"/>
+  <circle cx="256" cy="256" r="50" fill="url(#sun)"/>
+  <circle cx="374" cy="256" r="14" fill="#63D5E4"/>
+  <path d="M116 372H396" stroke="#63D5E4" stroke-opacity=".5" stroke-width="3"/>
+  <text x="256" y="430" text-anchor="middle" fill="#D9EBED" font-family="Arial, sans-serif" font-size="54" font-weight="700" letter-spacing="16">HA</text>
+</svg>
