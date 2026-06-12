@@ -139,8 +139,8 @@ Helios Accord is also packaged as a lightweight native Windows application using
 
 Download the latest Windows installer or portable executable from the [GitHub Releases page](https://github.com/benclawbot/Helios-Accord/releases/latest):
 
-- **Installer:** `Helios Accord_1.0.0_x64-setup.exe`
-- **Portable app:** `helios-accord.exe`
+- **Installer:** [`Helios.Accord_1.0.0_x64-setup.exe`](https://github.com/benclawbot/Helios-Accord/releases/download/v1.0.0/Helios.Accord_1.0.0_x64-setup.exe)
+- **Portable app:** [`helios-accord.exe`](https://github.com/benclawbot/Helios-Accord/releases/download/v1.0.0/helios-accord.exe)
 
 To build the Windows application locally:
 
