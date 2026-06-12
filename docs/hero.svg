@@ -1,0 +1,38 @@
+<svg width="1600" height="560" viewBox="0 0 1600 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 260) rotate(90) scale(430 950)">
+      <stop stop-color="#153844"/>
+      <stop offset=".5" stop-color="#08151C"/>
+      <stop offset="1" stop-color="#03070A"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1">
+      <stop stop-color="#FFF4B0"/>
+      <stop offset=".55" stop-color="#E7BE66"/>
+      <stop offset="1" stop-color="#9D552B"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="16"/></filter>
+    <pattern id="stars" width="130" height="95" patternUnits="userSpaceOnUse">
+      <circle cx="17" cy="24" r="1" fill="#9BD4DE" opacity=".35"/>
+      <circle cx="91" cy="64" r=".8" fill="#D9F5F5" opacity=".25"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="560" fill="url(#bg)"/>
+  <rect width="1600" height="560" fill="url(#stars)"/>
+  <circle cx="1265" cy="280" r="238" stroke="#76BFCA" stroke-opacity=".08"/>
+  <circle cx="1265" cy="280" r="175" stroke="#76BFCA" stroke-opacity=".12"/>
+  <circle cx="1265" cy="280" r="110" stroke="#76BFCA" stroke-opacity=".17"/>
+  <circle cx="1265" cy="280" r="75" fill="#D6883A" opacity=".15" filter="url(#glow)"/>
+  <circle cx="1265" cy="280" r="34" fill="url(#sun)"/>
+  <circle cx="1090" cy="280" r="11" fill="#4FA8C6"/>
+  <circle cx="1375" cy="280" r="8" fill="#B96646"/>
+  <circle cx="1265" cy="42" r="6" fill="#84C8D0"/>
+  <path d="M75 94H560" stroke="#63D5E4" stroke-opacity=".28"/>
+  <path d="M75 454H690" stroke="#63D5E4" stroke-opacity=".18"/>
+  <text x="75" y="150" fill="#63D5E4" font-family="monospace" font-size="16" letter-spacing="5">GRAND STRATEGY WITHIN ONE STAR</text>
+  <text x="70" y="266" fill="#E0ECEE" font-family="Arial Narrow, sans-serif" font-size="112" font-weight="700" letter-spacing="14">HELIOS</text>
+  <text x="75" y="354" fill="none" stroke="#63D5E4" font-family="Arial Narrow, sans-serif" font-size="90" font-weight="700" letter-spacing="20">ACCORD</text>
+  <text x="78" y="410" fill="#829BA1" font-family="monospace" font-size="15">Shape every colony. Balance every faction. Decide what humanity becomes.</text>
+  <rect x="75" y="465" width="268" height="42" stroke="#63D5E4" stroke-opacity=".7"/>
+  <text x="98" y="491" fill="#BDECF1" font-family="monospace" font-size="12" letter-spacing="3">ASSUME THE MANDATE</text>
+  <path d="M315 481L323 486L315 491" stroke="#BDECF1"/>
+</svg>
