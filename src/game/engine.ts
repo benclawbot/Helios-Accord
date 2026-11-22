@@ -163,7 +163,7 @@ export const MARKET_PRICES: Partial<Record<ResourceKey, number>> = { energy: .5,
 
 export function buyResource(game: GameState, key: ResourceKey, amount: number): GameState {
   const price = MARKET_PRICES[key]; const cost = Math.ceil((price ?? 999) * amount);
-  if (!price || amount <= 0 || game.resources.trade < cost) return game;
+  if (!price || !Number.isFinite(amount) || !Number.isInteger(amount) || amount <= 0 || amount > 1000 || game.resources.trade < cost) return game;
   return { ...game, resources: { ...game.resources, [key]: game.resources[key] + amount, trade: game.resources.trade - cost }, notifications: [`Purchased ${amount} ${RESOURCE_META[key].label} for ${cost} trade points.`, ...game.notifications].slice(0, 8) };
 }
 
