@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { BUILDINGS, buyResource, colonizeWorld, createGame, issueFleetOrder, queueBuilding, selectResearch, tickMonth } from "./engine";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { BUILDINGS, buyResource, colonizeWorld, createGame, issueFleetOrder, queueBuilding, selectResearch, saveGame, loadGame, tickMonth } from "./engine";
 
 describe("Helios Accord simulation", () => {
   it("finishing a mine increases colony mineral output", () => {
@@ -69,5 +69,47 @@ describe("Helios Accord simulation", () => {
     expect(game.fleets[0].location).toBe("Neptune");
     expect(game.fleets[0].readiness).toBeLessThan(100);
     expect(game.fleets[0].order).toBe("Survey Neptune");
+  });
+});
+
+
+describe("save compatibility and invalid input", () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  it("preserves campaign resources across a local save round-trip", () => {
+    const storage = new Map<string, string>();
+    vi.stubGlobal("localStorage", {
+      getItem: (key: string) => storage.get(key) ?? null,
+      setItem: (key: string, value: string) => storage.set(key, value),
+    });
+    const game = createGame();
+    game.resources.trade = 133;
+    saveGame(game);
+    const restored = loadGame();
+    expect(restored?.resources.trade).toBe(133);
+    expect(restored?.colonies.earth).toBeDefined();
+  });
+
+  it("rejects invalid saved JSON without crashing the game", () => {
+    vi.stubGlobal("localStorage", { getItem: () => "{not-valid-json}" });
+    expect(loadGame()).toBeUndefined();
+  });
+
+  it("refuses malformed resource purchase quantities without corrupting state", () => {
+    const game = createGame();
+    game.resources.trade = 1000;
+    for (const amount of [NaN, Infinity, -Infinity, -2, 0, 1.25, 1001]) {
+      expect(buyResource(game, "minerals", amount)).toBe(game);
+    }
+  });
+
+  it("keeps resources finite over a 5-year simulation", () => {
+    let game = createGame();
+    for (let i = 0; i < 60; i++) {
+      game = tickMonth(game);
+      for (const value of Object.values(game.resources)) {
+        expect(Number.isFinite(value)).toBe(true);
+      }
+    }
   });
 });
